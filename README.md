@@ -6,5 +6,5 @@ Exercises:
 - Mandatory: Done :heavy_check_mark:
 01-Exercise
 02-Exercise
-- Optional: None :x:
+- Optional (GraphQL): Done :heavy_check_mark:
 - Challenge: None :x:
