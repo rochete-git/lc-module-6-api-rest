@@ -14,7 +14,8 @@ export interface CharacterDetails {
   episode: string[],
   url: string,
   created: string,
-  description: string
+  description: string,
+  comment: string
 }
 
 export const createEmptyCharacterDetails = (): CharacterDetails => ({
@@ -33,5 +34,6 @@ export const createEmptyCharacterDetails = (): CharacterDetails => ({
   episode: [],
   url: "",
   created: "",
-  description: ""
+  description: "",
+  comment: ""
 });
