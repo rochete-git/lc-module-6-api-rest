@@ -9,3 +9,6 @@ junit.xml
 package-lock.json
 yarn.lock
 .awcache
+public
+server/node_modules
+server/package-lock.json
