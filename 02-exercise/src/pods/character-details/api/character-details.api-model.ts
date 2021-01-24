@@ -18,3 +18,8 @@ export interface CharacterDetails {
   url: string,
   created: string
 }
+
+export interface CharacterComment {
+  id: number,
+  comment: string
+}

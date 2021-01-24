@@ -2,10 +2,10 @@
 
 Lemoncode - Module 6 - API Rest
 
-Exercise - API Rest Mandatory - 01
+Exercise - API Rest Mandatory - 02
 
 ## First step: Initialize npm
 npm install
 
-## Run application (front end + json server) -> Server not necessary
+## Run application (front end + json server)
 npm run start

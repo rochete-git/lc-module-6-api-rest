@@ -14,19 +14,27 @@ import Collapse from '@material-ui/core/Collapse';
 import List from '@material-ui/core/List';
 import ListItemText from '@material-ui/core/ListItemText';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import TextField from '@material-ui/core/TextField';
+import SaveAltIcon from '@material-ui/icons/SaveAlt';
 
 interface Props {
   characterDetails: CharacterDetails;
+  onSaveComment: (id: number, comment: string) => void;
 }
 
 export const CharacterDetailsComponent: React.FunctionComponent<Props> = (
   props
 ) => {
-  const { characterDetails: characterDetails } = props;
+  const { characterDetails: characterDetails, onSaveComment } = props;
   const [expanded, setExpanded] = React.useState(false);
+  const [comment, setComment] = React.useState(characterDetails.comment);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
+  };
+
+  const handleSaveCommentClick = () => {
+    onSaveComment(characterDetails.id, comment)
   };
 
   return (
@@ -66,6 +74,15 @@ export const CharacterDetailsComponent: React.FunctionComponent<Props> = (
                 </a>
               }
             </Typography>
+            <Typography variant="subtitle1" gutterBottom>
+              Comment:
+              <TextField
+                multiline
+                fullWidth
+                defaultValue={characterDetails.comment}
+                onChange={(e) => setComment(e.target.value)}
+              />
+            </Typography>
           </div>
         </CardContent>
         <CardActions>
@@ -77,6 +94,10 @@ export const CharacterDetailsComponent: React.FunctionComponent<Props> = (
           >
             <ExpandMoreIcon />
           </IconButton>
+          Save:
+          <IconButton onClick={handleSaveCommentClick}>
+          <SaveAltIcon />
+        </IconButton>
         </CardActions>
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <CardContent>
